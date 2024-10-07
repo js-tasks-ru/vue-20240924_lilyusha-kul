@@ -30,7 +30,7 @@ export default defineComponent({
         :disabled="count <= 0"
       >➖</button>
 
-      <span class="count" data-testid="count">{{count}}</span>
+      <span class="count" data-testid="count">{{ count }}</span>
 
       <button @click="increment"
         class="button button--secondary"

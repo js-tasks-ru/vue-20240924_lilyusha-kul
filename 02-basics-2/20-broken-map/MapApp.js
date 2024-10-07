@@ -19,15 +19,17 @@ export default defineComponent({
     }
 
     // Следим за X и Y для установки нового положения
-    watch([x, y], () => {
-      // Находим метку и изменяем её положение
-      // const map = document.querySelector('.pin')
+    // watch([x, y], () => {
+    //   // Находим метку и изменяем её положение
+    //   // const map = document.querySelector('.pin')
       
-      map.value.style.left = `${x.value}px`
-      map.value.style.top = `${y.value}px`
-    })
+    //   map.value.style.left = `${x.value}px`
+    //   map.value.style.top = `${y.value}px`
+    // })
 
     return {
+      x,
+      y,
       handleClick,
       map,
     }
@@ -36,7 +38,7 @@ export default defineComponent({
   template: `
     <div class="map" @click="handleClick">
       <img class="map-image" src="./map.png" alt="Map" draggable="false" />
-      <span class="pin" ref="map">📍</span>
+      <span :style="{ 'left': x + 'px', 'top': y + 'px' }" class="pin" ref="map">📍</span>
     </div>
   `,
 })
