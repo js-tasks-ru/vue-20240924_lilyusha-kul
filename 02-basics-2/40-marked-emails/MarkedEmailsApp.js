@@ -36,10 +36,11 @@ export default defineComponent({
     const emailsArr = ref(emails)
     const search = ref('')
 
-    const filteredEmails = computed(() => emailsArr.value.filter(item => item.includes(search.value)))
-
-    return{
-      emailsArr,
+    const filteredEmails = computed(() => emailsArr.value.map(item => { 
+      return {item, marked: search.value.length > 0 && item.includes(search.value)} 
+    }))
+    
+    return {
       search,
       filteredEmails,
     }
@@ -52,10 +53,10 @@ export default defineComponent({
       </div>
       <ul aria-label="Emails">
         <li 
-          v-for="email in emailsArr" 
-          :class="{ 'marked': filteredEmails.includes(email) && search.length > 0 }"
+          v-for="email in filteredEmails" 
+          :class="{ 'marked': email.marked }"
         >
-          {{ email }}
+          {{ email.item }}
         </li>
       </ul>
     </div>

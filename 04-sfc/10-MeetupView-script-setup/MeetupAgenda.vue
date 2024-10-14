@@ -1,17 +1,16 @@
 <script setup>
-import { defineOptions, defineProps } from 'vue'
-import MeetupAgendaItem from './MeetupAgendaItem.vue'
+  import MeetupAgendaItem from './MeetupAgendaItem.vue'
 
-defineOptions({
-  name: 'MeetupAgenda',
-})
-  
-defineProps({
-  agenda: {
-    type: Array,
-    required: true,
-  },
-})
+  defineOptions({
+    name: 'MeetupAgenda',
+  })
+    
+  defineProps({
+    agenda: {
+      type: Array,
+      required: true,
+    },
+  })
 </script>
 
 <template>

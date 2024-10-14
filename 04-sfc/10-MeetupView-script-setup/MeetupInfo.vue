@@ -1,33 +1,33 @@
 <script setup>
-import { computed, defineOptions, defineProps } from 'vue'
-import { UiIcon } from '@shgk/vue-course-ui'
+  import { computed } from 'vue'
+  import { UiIcon } from '@shgk/vue-course-ui'
 
-defineOptions({
-  name: 'MeetupInfo',
-})
+  defineOptions({
+    name: 'MeetupInfo',
+  })
 
-const props = defineProps({
-  organizer: {
-    type: String,
-  },
+  const props = defineProps({
+    organizer: {
+      type: String,
+    },
 
-  place: {
-    type: String,
-  },
+    place: {
+      type: String,
+    },
 
-  date: {
-    type: Number,
-  },
-})
+    date: {
+      type: Number,
+    },
+  })
 
-const isoDate = computed(() => new Date(props.date).toISOString().slice(0, 10))
-const localDate = computed(() =>
-  new Date(props.date).toLocaleString(navigator.language, {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  }),
-)
+  const isoDate = computed(() => new Date(props.date).toISOString().slice(0, 10))
+  const localDate = computed(() =>
+    new Date(props.date).toLocaleString(navigator.language, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }),
+  )
 </script>
 
 <template>

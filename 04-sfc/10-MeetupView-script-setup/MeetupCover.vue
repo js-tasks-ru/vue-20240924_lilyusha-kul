@@ -1,21 +1,21 @@
 <script setup>
-import { computed, defineOptions, defineProps } from 'vue'
+  import { computed } from 'vue'
 
-defineOptions({
-  name: 'MeetupCover',
-})
-  
-const props = defineProps({
-  title: {
-    type: String,
-  },
+  defineOptions({
+    name: 'MeetupCover',
+  })
+    
+  const props = defineProps({
+    title: {
+      type: String,
+    },
 
-  image: {
-    type: String,
-  },
-})
-  
-const bgStyle = computed(() => (props.image ? { '--bg-url': `url('${props.image}')` } : undefined))
+    image: {
+      type: String,
+    },
+  })
+    
+  const bgStyle = computed(() => (props.image ? { '--bg-url': `url('${props.image}')` } : undefined))
 </script>
 
 <template>

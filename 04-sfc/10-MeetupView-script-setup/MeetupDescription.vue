@@ -1,15 +1,14 @@
 <script setup>
-import { defineOptions, defineProps } from 'vue'
 
-defineOptions({
-  name: 'MeetupDescription',
-})
-  
-defineProps({
-  description: {
-    type: String,
-  },
-})
+  defineOptions({
+    name: 'MeetupDescription',
+  })
+    
+  defineProps({
+    description: {
+      type: String,
+    },
+  })
 </script>
 
 <template>

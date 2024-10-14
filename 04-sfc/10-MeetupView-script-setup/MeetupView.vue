@@ -1,21 +1,20 @@
 <script setup>
-import { defineOptions, defineProps } from 'vue'
-import { UiAlert, UiContainer } from '@shgk/vue-course-ui'
-import MeetupAgenda from './MeetupAgenda.vue'
-import MeetupDescription from './MeetupDescription.vue'
-import MeetupCover from './MeetupCover.vue'
-import MeetupInfo from './MeetupInfo.vue'
+  import { UiAlert, UiContainer } from '@shgk/vue-course-ui'
+  import MeetupAgenda from './MeetupAgenda.vue'
+  import MeetupDescription from './MeetupDescription.vue'
+  import MeetupCover from './MeetupCover.vue'
+  import MeetupInfo from './MeetupInfo.vue'
 
-defineOptions({
-  name: 'MeetupView',
-}) 
+  defineOptions({
+    name: 'MeetupView',
+  }) 
 
-defineProps({
-  meetup: {
-    type: Object,
-    required: true,
-  },
-})
+  defineProps({
+    meetup: {
+      type: Object,
+      required: true,
+    },
+  })
 
 </script>
 

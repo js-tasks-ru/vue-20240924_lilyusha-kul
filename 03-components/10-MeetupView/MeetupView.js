@@ -37,9 +37,9 @@ export default defineComponent({
             <!-- Описание митапа -->
             <h2>Программа</h2>
             <!-- Программа митапа -->
-            <MeetupAgenda v-if="meetup.agenda != '' " :agenda="meetup.agenda"/>
+            <MeetupAgenda v-if="meetup.agenda.length > 0" :agenda="meetup.agenda"/>
             <!-- Или при пустой программе - сообщение "Программа пока пуста..." в UiAlert --> 
-            <UiAlert v-if="meetup.agenda == '' ">Программа пока пуста...</UiAlert>  
+            <UiAlert v-if="meetup.agenda.length == 0">Программа пока пуста...</UiAlert>  
           </div>
           <div class="meetup__aside">
             <MeetupInfo :organizer="meetup.organizer" :place="meetup.place" :date="meetup.date" />
